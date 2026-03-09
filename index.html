@@ -175,8 +175,7 @@
                 </div>
             </div>
         </section>
-    </div>
-        <section id="auth-section" style="display:none; justify-content: center; align-items: center; padding: 100px 20px;">
+    <section id="auth-section" style="display:none; justify-content: center; align-items: center; padding: 80px 20px;">
         <div class="auth-container" style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; border: 1px solid #ff6600; width: 100%; max-width: 400px; text-align: center;">
             <h2 id="auth-title" style="color: #fff; margin-bottom: 20px;">Влез в <span style="color: #ff6600;">Профила</span></h2>
             <p id="auth-msg" style="display:none; color: #ff4444; margin-bottom: 15px; font-size: 14px;"></p>
@@ -231,10 +230,7 @@
 
         window.selectPlan = (val) => {
             const sel = document.getElementById('plan-select');
-            if (sel) {
-                sel.value = val;
-                window.showSection('contact');
-            }
+            if (sel) { sel.value = val; window.showSection('contact'); }
         };
 
         document.getElementById('auth-form').addEventListener('submit', (e) => {
@@ -256,14 +252,18 @@
                     msg.style.display = 'block';
                 }).catch(err => {
                     msg.style.color = '#ff4444';
-                    msg.innerText = "Грешка: Паролата трябва да е 6+ знака.";
                     msg.style.display = 'block';
+                    if (err.code === 'auth/weak-password') msg.innerText = "Паролата трябва да е поне 6 знака!";
+                    else msg.innerText = "Грешка: " + err.message;
                 });
             }
         });
 
         onAuthStateChanged(auth, (user) => {
-            if (user) window.showSection('user-profile');
+            if (user) {
+                window.showSection('user-profile');
+                document.getElementById('display-name').innerText = user.email.split('@')[0];
+            }
         });
 
         document.getElementById('mobile-menu').onclick = () => document.getElementById('nav-list').classList.toggle('active');
