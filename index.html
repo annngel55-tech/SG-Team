@@ -3,54 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGteam | Мечтаното тяло</title>
+    <title>SGteam | Фитнес тренировки</title>
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Стилове за новата секция за вход */
-        #auth-section {
-            display: none;
-            padding: 100px 20px;
-            background: #000;
-            min-height: 100vh;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .auth-container {
-            background: #111;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #ff6600;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .auth-container input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            background: #222;
-            border: 1px solid #333;
-            color: white;
-            border-radius: 8px;
-        }
-        .auth-container button {
-            width: 100%;
-            padding: 12px;
-            background: #ff6600;
-            border: none;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 8px;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-        .auth-container button:hover { background: #e65c00; }
-        #auth-msg { color: #ff4444; font-size: 14px; margin-bottom: 10px; display: none; }
-        span { color: #ff6600; }
-    </style>
 </head>
 <body>
 
@@ -59,18 +14,18 @@
             <div class="menu-toggle" id="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
-            <div class="logo">
-                <a href="javascript:void(0)" onclick="showSection('home')" style="display: block; cursor: pointer;">
-                    <img src="logo-new.png" alt="SG TEAM">
-                </a>
-            </div>
+           <div class="logo">
+    <a href="javascript:void(0)" onclick="showSection('home')" style="display: block; cursor: pointer;">
+        <img src="logo-new.png" alt="SG TEAM">
+    </a>
+</div>
             <ul class="nav-links" id="nav-list">
                 <li><a href="javascript:void(0)" onclick="showSection('home')">Начало</a></li>
                 <li><a href="javascript:void(0)" onclick="showSection('about')">За нас</a></li>
                 <li><a href="javascript:void(0)" onclick="showSection('results')">Резултати</a></li>
                 <li><a href="javascript:void(0)" onclick="showSection('subscriptions')">Абонамент</a></li>
                 <li><a href="javascript:void(0)" onclick="showSection('contact')">Контакти</a></li>
-                <li><a href="javascript:void(0)" class="login-btn" onclick="showSection('auth-section')"><i class="fas fa-user"></i> ВХОД</a></li>
+                <li><a href="javascript:void(0)" class="login-btn" id="login-trigger"><i class="fas fa-user"></i> ВХОД</a></li>
             </ul>
         </nav>
     </header>
@@ -86,7 +41,7 @@
             </div>
         </section>
 
-        <section id="about" style="display:none;">
+        <section id="about">
             <div class="about-container" style="padding: 40px 20px;">
                 <div class="about-image">
                     <img src="trainer.png" alt="SGteam Trainer">
@@ -103,7 +58,7 @@
             </div>
         </section>
 
-        <section id="results" style="display:none;">
+        <section id="results">
             <div style="padding: 40px 20px;">
                 <h2 class="section-title">Реални <span>Трансформации</span></h2>
                 <div class="carousel-container">
@@ -120,7 +75,7 @@
             </div>
         </section>
 
-        <section id="subscriptions" style="display:none;">
+        <section id="subscriptions">
             <div style="padding: 40px 20px;">
                 <h2 class="section-title">ИЗБЕРИ СВОЯ <span>ПЛАН</span></h2>
                 <div class="subscriptions-grid">
@@ -128,6 +83,9 @@
                         <h3>1 МЕСЕЦ</h3>
                         <div class="price">185<span>€</span></div>
                         <div class="price-eur">~360<span>лв</span></div>
+                        <ul>
+                            
+                        </ul>
                         <a href="javascript:void(0)" class="cta-btn" onclick="showSection('contact'); selectPlan('1-month')">Избери</a>
                     </div>
                     <div class="subscription-card featured">
@@ -135,25 +93,34 @@
                         <h3>3 МЕСЕЦА</h3>
                         <div class="price">497<span>€</span></div>
                         <div class="price-eur">~970<span>лв</span></div>
+                        <ul>
+                            
+                        </ul>
                         <a href="javascript:void(0)" class="cta-btn" onclick="showSection('contact'); selectPlan('3-months')">Избери</a>
                     </div>
                     <div class="subscription-card">
                         <h3>6 МЕСЕЦА</h3>
                         <div class="price">923<span>€</span></div>
                         <div class="price-eur">~1800<span>лв</span></div>
+                        <ul>
+                            
+                        </ul>
                         <a href="javascript:void(0)" class="cta-btn" onclick="showSection('contact'); selectPlan('6-months')">Избери</a>
                     </div>
                     <div class="subscription-card">
                         <h3>1 ГОДИНА</h3>
                         <div class="price">1641<span>€</span></div>
                         <div class="price-eur">~3200<span>лв</span></div>
+                        <ul>
+                            
+                        </ul>
                         <a href="javascript:void(0)" class="cta-btn" onclick="showSection('contact'); selectPlan('1-year')">Избери</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" style="display:none;">
+        <section id="contact">
             <div class="contact-container" style="padding: 40px 20px;">
                 <div class="contact-info">
                     <h2 class="section-title">Свържи се с <span>Мен</span></h2>
@@ -175,98 +142,141 @@
                 </div>
             </div>
         </section>
-    <section id="auth-section" style="display:none; justify-content: center; align-items: center; padding: 80px 20px;">
-        <div class="auth-container" style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; border: 1px solid #ff6600; width: 100%; max-width: 400px; text-align: center;">
-            <h2 id="auth-title" style="color: #fff; margin-bottom: 20px;">Влез в <span style="color: #ff6600;">Профила</span></h2>
-            <p id="auth-msg" style="display:none; color: #ff4444; margin-bottom: 15px; font-size: 14px;"></p>
-            <form id="auth-form" style="display: flex; flex-direction: column; gap: 15px;">
-                <input type="email" id="auth-email" placeholder="Имейл" required style="padding: 12px; border-radius: 5px; border: none; background: #222; color: #fff;">
-                <input type="password" id="auth-pass" placeholder="Парола (6+ знака)" required style="padding: 12px; border-radius: 5px; border: none; background: #222; color: #fff;">
-                <button type="submit" id="auth-btn" style="padding: 12px; border: none; border-radius: 5px; background: #ff6600; color: #fff; font-weight: bold; cursor: pointer;">ВХОД</button>
-            </form>
-            <p style="margin-top: 20px; color: #888; font-size: 14px;">
-                <span id="toggle-text">Нямате профил? </span>
-                <a href="javascript:void(0)" onclick="toggleAuth()" id="toggle-link" style="color: #ff6600; text-decoration: none; font-weight: bold;">Регистрирайте се</a>
-            </p>
+    </div>
+
+    <section id="user-profile">
+        <div class="profile-container" style="max-width: 1100px; margin: 0 auto; padding: 20px;">
+            <div class="user-card" style="background: #111; padding: 30px; border-radius: 20px; border: 1px solid #222; text-align: center; margin-bottom: 50px;">
+                <h3 style="color: white; margin-bottom: 15px;">Профил на <span id="display-name" style="color: #ff6600;">Атлет</span></h3>
+                
+                <div class="progress-container" style="margin: 20px 0;">
+                    <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">Оставащи дни до края на абонамента:</p>
+                    <div style="background: #222; border-radius: 20px; height: 25px; width: 100%; position: relative; overflow: hidden; border: 1px solid #333;">
+                        <div id="days-progress-bar" style="background: linear-gradient(90deg, #ff6600, #ff9900); height: 100%; width: 0%; transition: width 1s ease-in-out;"></div>
+                    </div>
+                    <p id="days-left-text" style="color: #ff6600; font-weight: bold; font-size: 20px; margin-top: 10px;">-- дни</p>
+                </div>
+
+                <div class="subscription-dates" style="display: flex; gap: 15px; margin-top: 20px;">
+                    <div class="date-box" style="flex: 1; background: #000; padding: 12px; border: 1px solid #333; border-radius: 10px;">
+                        <p style="font-size: 10px; color: #666;">НАЧАЛО</p>
+                        <strong id="start-date" style="color: white;">--.--.----</strong>
+                    </div>
+                    <div class="date-box" style="flex: 1; background: #000; padding: 12px; border: 1px solid #333; border-radius: 10px;">
+                        <p style="font-size: 10px; color: #666;">ВАЛИДЕН ДО</p>
+                        <strong id="end-date" style="color: #ff6600;">--.--.----</strong>
+                    </div>
+                </div>
+
+                <div class="coach-note-box" style="margin: 30px 0;">
+                    <h4 style="color: #ff6600;">Инструкции за седмицата:</h4>
+                    <p id="coach-note" style="color: #ccc; margin-top: 10px;">Зареждане...</p>
+                </div>
+                <button onclick="location.reload()" class="cta-btn" style="background: #333; font-size: 12px; padding: 8px 20px;">ИЗХОД</button>
+            </div>
+
+            <h2 class="section-title">Техника на <span>Изпълнение</span></h2>
+            <div class="exercises-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="exercise-card" style="background: #111; padding: 15px; border-radius: 15px; border: 1px solid #222;">
+                    <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/vthMCtgVtFw" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 style="margin: 15px 0;">Гърди: Избутване с дъмбели</h4>
+                </div>
+                </div>
         </div>
     </section>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAqaHEM6KSwabE1YfoVtBqDQSYViVbSYZM",
-            authDomain: "sg-team-6a1a2.firebaseapp.com",
-            projectId: "sg-team-6a1a2",
-            storageBucket: "sg-team-6a1a2.firebasestorage.app",
-            messagingSenderId: "539417509213",
-            appId: "1:539417509213:web:32ae20a1101a5b2824bcb4",
-            measurementId: "G-CTKVNW8BVG"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        let isLoginMode = true;
-
-        window.toggleAuth = () => {
-            isLoginMode = !isLoginMode;
-            document.getElementById('auth-title').innerHTML = isLoginMode ? 'Влез в <span style="color: #ff6600;">Профила</span>' : 'Нова <span style="color: #ff6600;">Регистрация</span>';
-            document.getElementById('auth-btn').innerText = isLoginMode ? 'ВХОД' : 'СЪЗДАЙ ПРОФИЛ';
-            document.getElementById('toggle-link').innerText = isLoginMode ? 'Регистрирайте се' : 'Влезте тук';
-            document.getElementById('toggle-text').innerText = isLoginMode ? 'Нямате профил? ' : 'Вече имате профил? ';
-        };
-
-        window.showSection = (id) => {
-            const sections = ['home', 'about', 'results', 'subscriptions', 'contact', 'auth-section', 'user-profile'];
-            sections.forEach(s => {
-                const el = document.getElementById(s);
-                if (el) el.style.display = 'none';
+    <script>
+        // ГЛАВНА ФУНКЦИЯ ЗА СМЯНА НА СЕКЦИИ
+        function showSection(sectionId) {
+            // 1. Скриваме ВСИЧКИ възможни секции
+            const allSections = document.querySelectorAll('section, .hero, #user-profile');
+            allSections.forEach(sec => {
+                sec.classList.remove('active');
+                sec.style.display = 'none';
             });
-            const target = document.getElementById(id);
-            if (target) target.style.display = (id === 'home' || id === 'auth-section' || id === 'user-profile') ? 'flex' : 'block';
+
+            // 2. Показваме само избраната
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('active');
+                // Ако е Hero, ползваме Flex за центриране, за останалите - Block
+                target.style.display = (sectionId === 'home') ? 'flex' : 'block';
+            }
+
+            // 3. Затваряме мобилното меню при клик
+            document.getElementById('nav-list').classList.remove('active');
+            
+            // 4. Скролваме най-горе вътре в секцията
             window.scrollTo(0, 0);
-        };
+        }
 
-        window.selectPlan = (val) => {
-            const sel = document.getElementById('plan-select');
-            if (sel) { sel.value = val; window.showSection('contact'); }
-        };
+        // Мобилно меню
+        const menuBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuBtn.addEventListener('click', () => navList.classList.toggle('active'));
 
-        document.getElementById('auth-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('auth-email').value;
-            const pass = document.getElementById('auth-pass').value;
-            const msg = document.getElementById('auth-msg');
-            msg.style.display = 'none';
+        function selectPlan(val) { document.getElementById('plan-select').value = val; }
 
-            if (isLoginMode) {
-                signInWithEmailAndPassword(auth, email, pass).catch(err => {
-                    msg.innerText = "Грешен имейл или парола!";
-                    msg.style.display = 'block';
-                });
-            } else {
-                createUserWithEmailAndPassword(auth, email, pass).then(() => {
-                    msg.style.color = '#00ff00';
-                    msg.innerText = "Успешна регистрация!";
-                    msg.style.display = 'block';
-                }).catch(err => {
-                    msg.style.color = '#ff4444';
-                    msg.style.display = 'block';
-                    if (err.code === 'auth/weak-password') msg.innerText = "Паролата трябва да е поне 6 знака!";
-                    else msg.innerText = "Грешка: " + err.message;
-                });
-            }
+        // Вход
+        const loginTrigger = document.getElementById('login-trigger');
+        loginTrigger.addEventListener('click', function() {
+            const userInput = prompt("Въведете вашия код за достъп:");
+            if (!userInput) return;
+            const hashedInput = btoa(userInput);
+            
+            if (hashedInput === "c3RlZmFuMjAyNA==") { // stefan2024
+                showProfile("Стефан", "2026-01-21", "2026-04-21", "Наблегни на протеина тази седмица.");
+            } else if (hashedInput === "Y2xpZW50MTIz") { // client123
+                showProfile("Иван Иванов", "2026-01-21", "2026-04-21", "Увеличи тежестите при клека.");
+            } else { alert("Грешен код!"); }
         });
 
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                window.showSection('user-profile');
-                document.getElementById('display-name').innerText = user.email.split('@')[0];
-            }
-        });
+        function showProfile(name, startDateStr, endDateStr, note) {
+            showSection('user-profile');
+            
+            const startArr = startDateStr.split('-');
+            const endArr = endDateStr.split('-');
+            document.getElementById('display-name').innerText = name;
+            document.getElementById('start-date').innerText = `${startArr[2]}.${startArr[1]}.${startArr[0]}`;
+            document.getElementById('end-date').innerText = `${endArr[2]}.${endArr[1]}.${endArr[0]}`;
+            document.getElementById('coach-note').innerText = note;
 
-        document.getElementById('mobile-menu').onclick = () => document.getElementById('nav-list').classList.toggle('active');
+            const today = new Date();
+            const endDate = new Date(endDateStr);
+            const startDate = new Date(startDateStr);
+            
+            const totalDuration = endDate - startDate;
+            const timeLeft = endDate - today;
+            let daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
+            if (daysLeft < 0) daysLeft = 0;
+
+            let percent = (timeLeft / totalDuration) * 100;
+            if (percent < 0) percent = 0;
+            if (percent > 100) percent = 100;
+
+            document.getElementById('days-left-text').innerText = daysLeft + " дни";
+            document.getElementById('days-progress-bar').style.width = percent + "%";
+        }
+
+        // Карусел
+        const items = document.querySelectorAll('.carousel-item');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        let idx = 0;
+        function updateCarousel() {
+            items.forEach((item, i) => item.style.display = i === idx ? 'block' : 'none');
+            document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active', i === idx));
+        }
+        items.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            dot.addEventListener('click', () => { idx = i; updateCarousel(); });
+            dotsContainer.appendChild(dot);
+        });
+        document.querySelector('.next-btn').addEventListener('click', () => { idx = (idx + 1) % items.length; updateCarousel(); });
+        document.querySelector('.prev-btn').addEventListener('click', () => { idx = (idx - 1 + items.length) % items.length; updateCarousel(); });
+        updateCarousel();
     </script>
 </body>
 </html>
