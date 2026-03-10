@@ -238,16 +238,24 @@
         const auth = getAuth(app);
         let isLoginMode = true;
 
-       window.showSection = (id) => {
+      window.showSection = (id) => {
             const sections = ['home', 'about', 'results', 'subscriptions', 'contact', 'auth-section', 'user-profile'];
             sections.forEach(s => {
                 const el = document.getElementById(s);
                 if (el) el.style.display = 'none';
             });
+            
             const target = document.getElementById(id);
             if (target) {
                 target.style.display = (id === 'home' || id === 'auth-section' || id === 'user-profile') ? 'flex' : 'block';
             }
+
+            // ТОВА ЗАТВАРЯ МЕНЮТО АВТОМАТИЧНО НА ТЕЛЕФОН:
+            const navList = document.getElementById('nav-list');
+            if (navList) {
+                navList.classList.remove('active');
+            }
+
             window.scrollTo(0, 0);
         };
 
